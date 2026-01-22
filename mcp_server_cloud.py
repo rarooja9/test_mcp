@@ -20,6 +20,10 @@ mcp = FastMCP("MCP Server - Project Ideas Management")
 
 IDEAS_DB = []
 
+@mcp.tool
+def count_letter_r(text: str) -> int:
+    """Count the number of times the letter 'r' (case-insensitive) appears in a word or phrase."""
+    return text.lower().count('r')
 
 @mcp.tool
 def add_idea(title: str, description: str, author: str) -> str:
@@ -158,3 +162,4 @@ def summarize_ideas_prompt() -> str:
         "- Common patterns.\n\n"
         "List of ideas:\n{{ideas_list}}"
     )
+
